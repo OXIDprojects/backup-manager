@@ -1,0 +1,16 @@
+<script type="text/html" id="template-treeView">
+	<li style="clear: both;list-style: none;" data-bind="css: { 'disabled': disabled }">
+		<span style="float: left;width: 20px;height: 20px;">
+			<i style="cursor: pointer;" data-bind="visible: hasChildren, click: toggleChildren, css: { 'icon-chevron-right': !childrenVisible(), 'icon-chevron-down': childrenVisible }"></i>
+		</span>
+		<span class="toggleCheck" data-bind="visible: tree.selectable, component: new CheckBox(selected, disabled)"></span>
+		
+		<span style="cursor: default;" data-bind="text: name, click: toggleChildren"></span>
+		
+		<!-- ko if: childrenVisible -->
+		<ul data-bind="template: { name: 'template-treeView', foreach: children }"></ul>
+		<!-- /ko -->
+	</li>
+</script>
+
+<ul class="TreeView" data-bind="template: { name: 'template-treeView', foreach: data }"></ul>

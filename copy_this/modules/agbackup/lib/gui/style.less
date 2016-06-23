@@ -1,0 +1,411 @@
+@import "libs/bootstrap/less/bootstrap.less";
+@baseFontFamily: "Segoe UI", sans-serif;
+ 
+header
+{
+	font-size: 30px;
+	margin: 20px 0 40px 0;
+}
+
+.blue
+{
+	color: @blue;
+}
+
+#container
+{
+	max-width: 900px;
+	margin: 0 auto;
+}
+	
+.clear
+{
+	clear: both;
+}
+
+.nomargin
+{
+	margin: 0;
+}
+
+.table-valign-middle td
+{
+	vertical-align: middle;
+}
+
+.modalBackground
+{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+	
+	background: rgba(0, 0, 0, 0.8);
+	
+	.modalPanel
+	{
+		position: relative;
+		top: 40%;
+		left: 0;
+		margin: 0 auto;
+		
+		width: 50%;
+		
+		.panel-heading
+		{
+			margin-bottom: 10px;
+		}
+		
+		#password
+		{
+			margin: 0;
+			
+			width: 85%;
+			font-size: 24px;
+			height: 24px;
+			
+			border: none;
+		}
+		
+		button
+		{
+			z-index: 1000;
+                        position: absolute;
+                        right: 20px;
+                        bottom: 20px;
+                        margin: 0;
+                        width: 100px;
+                        border: none;
+                        background: #17b8fb;
+                        height: 32px;
+                        color: #ffffff;
+                        border: 2px solid #ffffff;
+                        font-size: 15px;
+			
+			&:hover
+			{
+				background: lighten(@blue, 5%);
+			}
+			&:active
+			{
+				background: @blue;
+			}
+		}
+	}
+}
+
+#sidebar
+{
+	& > .metro-panel
+	{
+		margin-bottom: 10px;
+	}
+	
+	/*h3
+	{
+		background: lighten(@blue, 15%);
+		color: white;
+	
+		font-weight: normal;
+		padding-left: 7px;
+		
+		border-bottom: 1px solid @white;
+	}
+	
+	.data
+	{
+		background: darken(@white, 6%); 
+	}
+	
+	ul
+	{
+		list-style: none;
+		margin: 0 0 3px 0;
+		
+		& > li
+		{
+			list-style: none;
+			margin: 0;
+			padding: 5px;
+			
+			label
+			{
+				display: inline;
+			}
+			
+			span
+			{
+				float: right;
+				color: @blue;
+			}
+			span.red
+			{
+				color: @red;
+			}
+			
+			&.active
+			{
+				background: none;
+				color: @blue;
+				border: none;
+				cursor: pointer;
+				
+				&:hover
+				{
+					background: lighten(@blue, 15%);
+					color: @white;
+				}
+			}
+		}
+	}*/
+}
+
+#content
+{
+	padding-left: 20px;
+}
+
+.metro-back
+{
+	width: 32px;
+	height: 32px;
+	
+	background: url('img/back.png') no-repeat;
+	border: none;
+	
+	margin-top: 5px;
+	margin-right: 15px;
+}
+
+h2.metro-heading
+{
+	font-weight: normal;
+	padding: 0;
+	font-size: 45px;
+	
+	color: lighten(@black, 30%);
+	
+	margin-bottom: 30px;
+}
+
+.metro-form input.input-xlarge[type="text"],
+.metro-form input.input-xlarge[type="password"]
+{
+	width: 80%;
+}
+.metro-form select.input-xlarge
+{
+	width: 82%;
+}
+
+.metro-form label
+{
+	font-size: 15px;
+}
+
+.btn-primary
+{
+	width: 200px;
+}
+
+button.no-border
+{
+	background: none;
+	border: none;
+}
+.metro-circle-big
+{
+	width: 32px;
+	height: 32px;
+}
+.metro-circle-medium
+{
+	width: 28px;
+	height: 28px;
+}
+.metro-circle-small
+{
+	width: 24px;
+	height: 24px;
+}
+
+.TreeView
+{
+	height: 300px;
+	width: 82%;
+	
+	border: 1px solid #CCC;
+	
+	overflow: auto;
+	margin: 0;
+	
+	@transition: border linear .2s;
+	.transition(@transition);
+	
+	.toggleCheck
+	{
+		cursor: pointer;
+	}
+	
+	&:hover
+	{
+		border: 1px solid @blue;
+	}
+	
+	li:hover > span
+	{
+		color: @blue;
+	}
+	
+	li.disabled > span
+	{
+		color: @red;
+		
+		&.toggleCheck > .disabled
+		{
+			cursor: default;
+		}
+	}
+}
+
+.metro-panel
+{		
+	padding: 20px;
+	
+	background: lighten(@blue, 10%);
+	color: @white;
+	border: none;
+			
+	text-align: left;
+		
+	overflow: hidden;
+		
+	& > .panel-heading
+	{
+		font-weight: normal;
+		padding: 0;
+		font-size: 45px;
+			
+		position: relative;
+		left: -5px;
+		top: -8px;
+		width: 98%;
+                line-height: 45px;
+	}
+		
+	& > .close
+	{
+		position: relative;
+		top: -5px;
+		right: 3px;
+	}
+		
+	& > p
+	{
+		margin: 0;
+		padding: 0;
+		text-indent: 0;
+	}
+		
+	.red
+	{
+		color: lighten(@red, 20%);
+	}
+		
+	&.active:hover
+	{
+		background: lighten(@blue, 5%);
+	}
+	&.active:active
+	{
+		background: @blue;
+	}
+		
+	&.metro-yellow
+	{
+		background: @warningBackground;
+		color: @warningText;
+		
+		&.active:hover
+		{
+			background: darken(@warningBackground, 5%);
+		}
+		&.active:active
+		{
+			background: darken(@warningBackground, 10%);
+		}
+	}
+	&.metro-green
+	{
+		background: lighten(@green, 10%);
+		
+		&.active:hover
+		{
+			background: lighten(@green, 5%);
+		}
+		&.active:active
+		{
+			background: @green;
+		}
+	}
+	&.metro-gray
+	{
+		background: darken(@white, 5%);
+		color: @black;
+		
+		&.active:hover
+		{
+			background: darken(@white, 10%);
+		}
+		&.active:active
+		{
+			background: darken(@white, 15%);
+		}
+	}
+	&.metro-red
+	{
+		background: lighten(@red, 10%);
+			
+		& > .close
+		{
+			color: @white;
+			opacity: 0.8;
+			filter: alpha(opacity=80);
+		}
+		
+		a
+		{
+			color: @white;
+			text-decoration: underline;
+		}
+		
+		&.active:hover
+		{
+			background: lighten(@red, 5%);
+		}
+		&.active:active
+		{
+			background: @red;
+		}
+	}
+}
+
+.heading-option
+{
+	float: left;
+	margin-top: 10px;
+}
+.heading-option-first
+{
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+label > input[type="checkbox"]
+{
+	vertical-align: baseline;
+}
